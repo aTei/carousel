@@ -1,0 +1,83 @@
+$carouse-primary-color: rgb(255, 102, 102);
+$carouse-width: 680px;
+$carouse-height: 200px;
+$carousel-nav-side: 30px;
+$carouse-i-margin: 20px;
+
+.carousel {
+  width: 10000px;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  transition: transform ease-in-out 0.3s;
+
+  &-container {
+    position: relative;
+    z-index: 1;
+    width: $carouse-width;
+    height: $carouse-height;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    font-size: 0;
+    white-space: nowrap;
+  }
+
+    &-i {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: $carouse-i-margin;
+      cursor: pointer;
+      transition: box-shadow ease-in-out 0.3s;
+
+      &_selected {
+        box-shadow: inset 0 0 4px 4px $carouse-primary-color;
+      }
+
+      &-img {
+        position: relative;
+        z-index: -1;
+        display: block;
+      }
+    }
+
+    &-control {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      display: block;
+      padding: 10px 30px;
+      background-color: rgb(255, 153, 153);
+      color: #000;
+      text-decoration: none;
+      font-size: 16px;
+      -webkit-user-select: none;
+      user-select: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $carouse-primary-color;
+      }
+
+
+      &_prev {
+        left: 0;
+      }
+
+      &_next {
+        right: 0;
+      }
+
+      &_disabled {
+        &,
+        &:hover {
+          background-color: #eee;
+          color: #999;
+          cursor: default;
+        }
+      }
+    }
+
+}
